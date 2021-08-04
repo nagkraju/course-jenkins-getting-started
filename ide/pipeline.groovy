@@ -30,8 +30,8 @@ pipeline {
                 always {
                     junit '**/target/surefire-reports/TEST-*.xml'
                     archiveArtifacts 'target/*.jar'
-               // }
-                //changed {
+               }
+                changed {
                     
                 emailext body: 'Please go to ${BUILD_URL} and verify the build', 
                 subject: 'Job \'${JOB_NAME}\' (${BUILD_NUMBER}) is waiting for input',
